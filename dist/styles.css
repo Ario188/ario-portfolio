@@ -1,1 +1,188 @@
-/* Optional extra styles; main styles come from output.css */
+/* Optional extra styles; main styles come from dist/output.css */
+
+/* Project list (contact.html): gap between page title and first row — title matches index PORTFOLIO position */
+.project-list-below {
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-list-below {
+    margin-top: 3.25rem;
+  }
+}
+
+/* Project listing: left thumbnail, right title + summary (contact.html) */
+.project-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .project-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .project-row__thumb {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .project-row__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.project-row__thumb a {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid #f3f4f6;
+}
+
+.dark .project-row__thumb a {
+  border-color: #262626;
+}
+
+/* Non-linked preview (no project detail page) */
+.project-row__thumb-static {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid #f3f4f6;
+}
+
+.dark .project-row__thumb-static {
+  border-color: #262626;
+}
+
+.project-row__thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: opacity 0.2s ease, transform 0.35s ease;
+}
+
+.project-row__thumb a:hover img,
+.project-row__thumb a:focus-visible img {
+  opacity: 0.92;
+  transform: scale(1.02);
+}
+
+.project-row__title {
+  margin-bottom: 0.75rem;
+}
+
+.project-row__title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-row__title a:hover,
+.project-row__title a:focus-visible {
+  text-decoration: underline;
+}
+
+.project-summary {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #404040;
+}
+
+.dark .project-summary {
+  color: #d4d4d4;
+}
+
+/* Single-project page: embedded video (e.g. project-9.html) */
+.project-video-wrap {
+  width: 100%;
+}
+
+.project-page-video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #f3f4f6;
+  background: #000;
+}
+
+.dark .project-page-video {
+  border-color: #262626;
+}
+
+/* Project list / detail: italic + bold title (e.g. Lost Land) */
+.project-title-italic-bold {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.project-title-italic-bold a {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Titles that include Chinese (e.g. Liangshan, Not Liang) */
+.project-title-with-cjk {
+  font-family: Signika, "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+.project-title-with-cjk a {
+  font-family: inherit;
+}
+
+/* Project detail: award / credit line under title */
+.project-award-line {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #525252;
+  margin: 0 0 1.75rem 0;
+}
+
+.dark .project-award-line {
+  color: #a3a3a3;
+}
+
+/* Award line on project list (contact.html) under title */
+.project-award-line--list {
+  margin-top: 0.125rem;
+  margin-bottom: 1rem;
+}
+
+/* Project detail: two-column grid (5 rows × 2), 4:3 photos — no crop */
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .project-gallery-grid {
+    gap: 1.25rem;
+  }
+}
+
+.project-gallery-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0.25rem;
+  border: 1px solid #f3f4f6;
+}
+
+.dark .project-gallery-grid img {
+  border-color: #262626;
+}
